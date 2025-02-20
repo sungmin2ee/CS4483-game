@@ -228,6 +228,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1234,7 +1247,52 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bloodsplatterandgibs_0: -539345532502818099
+      bloodsplatterandgibs_1: 7653229400006680186
+      bloodsplatterandgibs_10: -3157756400300020137
+      bloodsplatterandgibs_11: -5477230538067686313
+      bloodsplatterandgibs_12: -1004778049872645395
+      bloodsplatterandgibs_13: 1622311907119174784
+      bloodsplatterandgibs_14: 5538415909392894863
+      bloodsplatterandgibs_15: 5932318092888617324
+      bloodsplatterandgibs_16: -1160455724802917548
+      bloodsplatterandgibs_17: -3517228913890007958
+      bloodsplatterandgibs_18: 5969251457749693609
+      bloodsplatterandgibs_19: 7759177649457587904
+      bloodsplatterandgibs_2: 1199863248247174530
+      bloodsplatterandgibs_20: -5103963616576878258
+      bloodsplatterandgibs_21: -7291604751747393922
+      bloodsplatterandgibs_22: -5933373024475607393
+      bloodsplatterandgibs_23: 8246013853579444904
+      bloodsplatterandgibs_24: -5024968245200801618
+      bloodsplatterandgibs_25: 2915941912179126013
+      bloodsplatterandgibs_26: 7884504260116323524
+      bloodsplatterandgibs_27: 6913454796606266058
+      bloodsplatterandgibs_28: -9097752954558083309
+      bloodsplatterandgibs_29: 2493265845077504710
+      bloodsplatterandgibs_3: 2343033150372734275
+      bloodsplatterandgibs_30: 460323244481162664
+      bloodsplatterandgibs_31: -4755863440058781176
+      bloodsplatterandgibs_32: -2842266674597790512
+      bloodsplatterandgibs_33: 573644120068925606
+      bloodsplatterandgibs_34: 7001417292954226458
+      bloodsplatterandgibs_35: -78025314113565813
+      bloodsplatterandgibs_36: 7532608552057561787
+      bloodsplatterandgibs_37: -4869152026816968001
+      bloodsplatterandgibs_38: -4696457270976738028
+      bloodsplatterandgibs_39: 3144178958848229176
+      bloodsplatterandgibs_4: -444807112615237106
+      bloodsplatterandgibs_40: 5350694521353628769
+      bloodsplatterandgibs_41: -3327873784100300624
+      bloodsplatterandgibs_42: -3462158675357757580
+      bloodsplatterandgibs_43: 634069335595934777
+      bloodsplatterandgibs_44: 6470698502707456896
+      bloodsplatterandgibs_5: 6648579859536413773
+      bloodsplatterandgibs_6: -6888139480939545295
+      bloodsplatterandgibs_7: 3100364180507771459
+      bloodsplatterandgibs_8: -7682254692228816725
+      bloodsplatterandgibs_9: 7750176111955308984
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
