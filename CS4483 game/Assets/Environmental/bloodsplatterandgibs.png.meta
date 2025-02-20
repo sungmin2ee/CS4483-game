@@ -1,0 +1,1300 @@
+fileFormatVersion: 2
+guid: f7a7ef9d05973d54483837c15ff8fa7a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -539345532502818099
+    second: bloodsplatterandgibs_0
+  - first:
+      213: 7653229400006680186
+    second: bloodsplatterandgibs_1
+  - first:
+      213: 1199863248247174530
+    second: bloodsplatterandgibs_2
+  - first:
+      213: 2343033150372734275
+    second: bloodsplatterandgibs_3
+  - first:
+      213: -444807112615237106
+    second: bloodsplatterandgibs_4
+  - first:
+      213: 6648579859536413773
+    second: bloodsplatterandgibs_5
+  - first:
+      213: -6888139480939545295
+    second: bloodsplatterandgibs_6
+  - first:
+      213: 3100364180507771459
+    second: bloodsplatterandgibs_7
+  - first:
+      213: -7682254692228816725
+    second: bloodsplatterandgibs_8
+  - first:
+      213: 7750176111955308984
+    second: bloodsplatterandgibs_9
+  - first:
+      213: -3157756400300020137
+    second: bloodsplatterandgibs_10
+  - first:
+      213: -5477230538067686313
+    second: bloodsplatterandgibs_11
+  - first:
+      213: -1004778049872645395
+    second: bloodsplatterandgibs_12
+  - first:
+      213: 1622311907119174784
+    second: bloodsplatterandgibs_13
+  - first:
+      213: 5538415909392894863
+    second: bloodsplatterandgibs_14
+  - first:
+      213: 5932318092888617324
+    second: bloodsplatterandgibs_15
+  - first:
+      213: -1160455724802917548
+    second: bloodsplatterandgibs_16
+  - first:
+      213: -3517228913890007958
+    second: bloodsplatterandgibs_17
+  - first:
+      213: 5969251457749693609
+    second: bloodsplatterandgibs_18
+  - first:
+      213: 7759177649457587904
+    second: bloodsplatterandgibs_19
+  - first:
+      213: -5103963616576878258
+    second: bloodsplatterandgibs_20
+  - first:
+      213: -7291604751747393922
+    second: bloodsplatterandgibs_21
+  - first:
+      213: -5933373024475607393
+    second: bloodsplatterandgibs_22
+  - first:
+      213: 8246013853579444904
+    second: bloodsplatterandgibs_23
+  - first:
+      213: -5024968245200801618
+    second: bloodsplatterandgibs_24
+  - first:
+      213: 2915941912179126013
+    second: bloodsplatterandgibs_25
+  - first:
+      213: 7884504260116323524
+    second: bloodsplatterandgibs_26
+  - first:
+      213: 6913454796606266058
+    second: bloodsplatterandgibs_27
+  - first:
+      213: -9097752954558083309
+    second: bloodsplatterandgibs_28
+  - first:
+      213: 2493265845077504710
+    second: bloodsplatterandgibs_29
+  - first:
+      213: 460323244481162664
+    second: bloodsplatterandgibs_30
+  - first:
+      213: -4755863440058781176
+    second: bloodsplatterandgibs_31
+  - first:
+      213: -2842266674597790512
+    second: bloodsplatterandgibs_32
+  - first:
+      213: 573644120068925606
+    second: bloodsplatterandgibs_33
+  - first:
+      213: 7001417292954226458
+    second: bloodsplatterandgibs_34
+  - first:
+      213: -78025314113565813
+    second: bloodsplatterandgibs_35
+  - first:
+      213: 7532608552057561787
+    second: bloodsplatterandgibs_36
+  - first:
+      213: -4869152026816968001
+    second: bloodsplatterandgibs_37
+  - first:
+      213: -4696457270976738028
+    second: bloodsplatterandgibs_38
+  - first:
+      213: 3144178958848229176
+    second: bloodsplatterandgibs_39
+  - first:
+      213: 5350694521353628769
+    second: bloodsplatterandgibs_40
+  - first:
+      213: -3327873784100300624
+    second: bloodsplatterandgibs_41
+  - first:
+      213: -3462158675357757580
+    second: bloodsplatterandgibs_42
+  - first:
+      213: 634069335595934777
+    second: bloodsplatterandgibs_43
+  - first:
+      213: 6470698502707456896
+    second: bloodsplatterandgibs_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 121
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc2c9f3881cd388f0800000000000000
+      internalID: -539345532502818099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 124
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e59fb379bb53a60800000000000000
+      internalID: 7653229400006680186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 115
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285b1d26445c6a010800000000000000
+      internalID: 1199863248247174530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 129
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3456ee08c30248020800000000000000
+      internalID: 2343033150372734275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 121
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a600ba94ab3d9f0800000000000000
+      internalID: -444807112615237106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_5
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 123
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d440c741820844c50800000000000000
+      internalID: 6648579859536413773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_6
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 120
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d314313a96860a0800000000000000
+      internalID: -6888139480939545295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_7
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 125
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342c285bbc4b60b20800000000000000
+      internalID: 3100364180507771459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_8
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 120
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0af9b4f06236590800000000000000
+      internalID: -7682254692228816725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_9
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 118
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b170d39c182e8b60800000000000000
+      internalID: 7750176111955308984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 127
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ea6e0d8456d24d0800000000000000
+      internalID: -3157756400300020137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_11
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 132
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ccd8168d7fcf3b0800000000000000
+      internalID: -5477230538067686313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_12
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 137
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de23b3befaf4e02f0800000000000000
+      internalID: -1004778049872645395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_13
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 117
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08499ba851c938610800000000000000
+      internalID: 1622311907119174784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_14
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 119
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b4cb10de76cdc40800000000000000
+      internalID: 5538415909392894863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_15
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 116
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61bf3defd3d35250800000000000000
+      internalID: 5932318092888617324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 117
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45bbd89aaab35efe0800000000000000
+      internalID: -1160455724802917548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 124
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a646ad910fa403fc0800000000000000
+      internalID: -3517228913890007958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_18
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 123
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4372a039a07d250800000000000000
+      internalID: 5969251457749693609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_19
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 122
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c6e11956f22eab60800000000000000
+      internalID: 7759177649457587904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_20
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 125
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49ca67f1241b29b0800000000000000
+      internalID: -5103963616576878258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_21
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 113
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e76db816c140fca90800000000000000
+      internalID: -7291604751747393922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_22
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 124
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9e0f3cabac68ada0800000000000000
+      internalID: -5933373024475607393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_23
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 125
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a28d8b19e9bf6270800000000000000
+      internalID: 8246013853579444904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_24
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 77
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea03031210ab34ab0800000000000000
+      internalID: -5024968245200801618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_25
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 80
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe2c1548b1877820800000000000000
+      internalID: 2915941912179126013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_26
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 88
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc9946c9d26b6d60800000000000000
+      internalID: 7884504260116323524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_27
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 76
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acadf6a228681ff50800000000000000
+      internalID: 6913454796606266058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_28
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 71
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31f0e49c3e94eb180800000000000000
+      internalID: -9097752954558083309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_29
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c27572831cd99220800000000000000
+      internalID: 2493265845077504710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_30
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 85
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ada72d4d85636600800000000000000
+      internalID: 460323244481162664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_31
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 66
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802770f1667cffdb0800000000000000
+      internalID: -4755863440058781176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_32
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 53
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dcfaa7b48d3e88d0800000000000000
+      internalID: -2842266674597790512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_33
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 66
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a82334b94ef5f700800000000000000
+      internalID: 573644120068925606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_34
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 65
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f40decee70a2160800000000000000
+      internalID: 7001417292954226458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_35
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 57
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8bc5c4e36ccaeef0800000000000000
+      internalID: -78025314113565813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_36
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 81
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2e5719193398860800000000000000
+      internalID: 7532608552057561787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_37
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 80
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba833c870c4d6cb0800000000000000
+      internalID: -4869152026816968001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_38
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 75
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d81a4bef4d2deb0800000000000000
+      internalID: -4696457270976738028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_39
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 54
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ff760ca1e52ab20800000000000000
+      internalID: 3144178958848229176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_40
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 63
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c69e6615c714a40800000000000000
+      internalID: 5350694521353628769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_41
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 68
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8dd59dc6401d1d0800000000000000
+      internalID: -3327873784100300624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_42
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 11
+        width: 85
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f834f2701f3ffc0800000000000000
+      internalID: -3462158675357757580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_43
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 9
+        width: 122
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 934e92783baacc800800000000000000
+      internalID: 634069335595934777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodsplatterandgibs_44
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 9
+        width: 110
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ba786410a8cc950800000000000000
+      internalID: 6470698502707456896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bloodsplatterandgibs_0: -539345532502818099
+      bloodsplatterandgibs_1: 7653229400006680186
+      bloodsplatterandgibs_10: -3157756400300020137
+      bloodsplatterandgibs_11: -5477230538067686313
+      bloodsplatterandgibs_12: -1004778049872645395
+      bloodsplatterandgibs_13: 1622311907119174784
+      bloodsplatterandgibs_14: 5538415909392894863
+      bloodsplatterandgibs_15: 5932318092888617324
+      bloodsplatterandgibs_16: -1160455724802917548
+      bloodsplatterandgibs_17: -3517228913890007958
+      bloodsplatterandgibs_18: 5969251457749693609
+      bloodsplatterandgibs_19: 7759177649457587904
+      bloodsplatterandgibs_2: 1199863248247174530
+      bloodsplatterandgibs_20: -5103963616576878258
+      bloodsplatterandgibs_21: -7291604751747393922
+      bloodsplatterandgibs_22: -5933373024475607393
+      bloodsplatterandgibs_23: 8246013853579444904
+      bloodsplatterandgibs_24: -5024968245200801618
+      bloodsplatterandgibs_25: 2915941912179126013
+      bloodsplatterandgibs_26: 7884504260116323524
+      bloodsplatterandgibs_27: 6913454796606266058
+      bloodsplatterandgibs_28: -9097752954558083309
+      bloodsplatterandgibs_29: 2493265845077504710
+      bloodsplatterandgibs_3: 2343033150372734275
+      bloodsplatterandgibs_30: 460323244481162664
+      bloodsplatterandgibs_31: -4755863440058781176
+      bloodsplatterandgibs_32: -2842266674597790512
+      bloodsplatterandgibs_33: 573644120068925606
+      bloodsplatterandgibs_34: 7001417292954226458
+      bloodsplatterandgibs_35: -78025314113565813
+      bloodsplatterandgibs_36: 7532608552057561787
+      bloodsplatterandgibs_37: -4869152026816968001
+      bloodsplatterandgibs_38: -4696457270976738028
+      bloodsplatterandgibs_39: 3144178958848229176
+      bloodsplatterandgibs_4: -444807112615237106
+      bloodsplatterandgibs_40: 5350694521353628769
+      bloodsplatterandgibs_41: -3327873784100300624
+      bloodsplatterandgibs_42: -3462158675357757580
+      bloodsplatterandgibs_43: 634069335595934777
+      bloodsplatterandgibs_44: 6470698502707456896
+      bloodsplatterandgibs_5: 6648579859536413773
+      bloodsplatterandgibs_6: -6888139480939545295
+      bloodsplatterandgibs_7: 3100364180507771459
+      bloodsplatterandgibs_8: -7682254692228816725
+      bloodsplatterandgibs_9: 7750176111955308984
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

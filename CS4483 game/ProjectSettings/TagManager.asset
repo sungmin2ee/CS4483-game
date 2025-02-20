@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Enemy
+  - AttackRange
   - Wall
   - Floor
   - Gate
@@ -17,6 +19,7 @@ TagManager:
   - UI
   - Player
   - NPC
+  - 
   - 
   - 
   - 
