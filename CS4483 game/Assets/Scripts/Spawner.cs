@@ -27,8 +27,7 @@ public class Spawner : MonoBehaviour
         timer += Time.deltaTime;
         level = Mathf.FloorToInt(GameManager.Instance.gameTime / 10f);
 
-        // 시간 경과에 따라 spawnInterval 감소 (지수적으로 감소하도록 변경)
-        spawnInterval = Mathf.Max(0.1f, 0.5f * Mathf.Pow(0.95f, GameManager.Instance.gameTime));
+        spawnInterval = Mathf.Max(0.7f, 0.5f * Mathf.Pow(0.95f, GameManager.Instance.gameTime));
 
         if (timer > spawnInterval)
         {
