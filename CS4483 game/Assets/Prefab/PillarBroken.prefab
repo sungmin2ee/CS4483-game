@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4095201402464820478}
   - component: {fileID: 5261233651279715477}
-  - component: {fileID: 3404242234988645843}
   - component: {fileID: 467108854523373581}
   m_Layer: 20
   m_Name: PillarBroken
@@ -89,20 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3404242234988645843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8073430939826510856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2146177ab4f3dfe48ab9182b6a6af54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sortingOrderBase: 2
-  offset: 0
 --- !u!61 &467108854523373581
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2842447506430646279}
   - component: {fileID: 8355730369863176275}
-  - component: {fileID: 6661713357490440213}
   - component: {fileID: 6842131362627750813}
   m_Layer: 20
   m_Name: Well
@@ -89,20 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6661713357490440213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878566718152702452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2146177ab4f3dfe48ab9182b6a6af54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sortingOrderBase: 2
-  offset: 0
 --- !u!70 &6842131362627750813
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

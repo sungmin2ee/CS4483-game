@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9172020122917267977}
   - component: {fileID: 6550291247404513708}
-  - component: {fileID: 4326439714443814719}
   - component: {fileID: 2922945637162065149}
   m_Layer: 20
   m_Name: RunePillarBroken
@@ -89,20 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4326439714443814719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8065057043946927610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2146177ab4f3dfe48ab9182b6a6af54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sortingOrderBase: 2
-  offset: 0
 --- !u!61 &2922945637162065149
 BoxCollider2D:
   m_ObjectHideFlags: 0
