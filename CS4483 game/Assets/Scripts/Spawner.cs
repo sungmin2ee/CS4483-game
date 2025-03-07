@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform[] spawnPoint;
+    public SpawnData[] spawnData;
     float timer;
     int level;
     float spawnInterval = 0.5f;
@@ -27,9 +29,7 @@ public class Spawner : MonoBehaviour
         timer += Time.deltaTime;
         level = Mathf.FloorToInt(GameManager.Instance.gameTime / 10f);
 
-        spawnInterval = Mathf.Max(0.7f, 0.5f * Mathf.Pow(0.95f, GameManager.Instance.gameTime));
-
-        if (timer > spawnInterval)
+        if (timer > spawnData[level].spawnTime)
         {
             timer = 0;
             Spawn();
@@ -38,14 +38,9 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        if (GameManager.Instance.pool == null)
-        {
-            Debug.LogError("PoolManager is null! Make sure it is assigned in GameManager.");
-            return;
-        }
-
-        GameObject enemy = GameManager.Instance.pool.Get(Random.Range(0, 2));
+        GameObject enemy = GameManager.Instance.pool.Get(0);
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        enemy.GetComponent<Enemy>().Init(spawnData[level]);
         spawnedEnemies.Add(enemy);
     }
 
@@ -60,4 +55,13 @@ public class Spawner : MonoBehaviour
         }
         spawnedEnemies.Clear();
     }
+}
+[System.Serializable]
+public class SpawnData
+{
+    public float spawnTime;
+    public int spriteType;
+    public int health;
+    public float speed;
+
 }
