@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
         timer += Time.deltaTime;
         level = Mathf.FloorToInt(GameManager.Instance.gameTime / 10f);
 
-        if (timer > spawnData[level].spawnTime)
+        if (timer > spawnData[level].spawnTime && GameManager.Instance.timeRemaining > 0)
         {
             timer = 0;
             Spawn();
