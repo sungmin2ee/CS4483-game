@@ -17,17 +17,17 @@ public class CutsceneController : MonoBehaviour
         "Now, I set out on my journey of revenge!"
         }; // Array of narratives (text for each scene)
     public TextMeshProUGUI narrativeText; // UI Text for narrative
-    public CanvasGroup canvasGroup; // Canvas Group for fade effect
+    public CanvasGroup canvasGroup; 
     private int currentIndex = 0;
-    public float fadeDuration = 0.5f; // Duration of fade effect
+    public float fadeDuration = 0.5f; // duration of fade effect
 
     void Start()
     {
         if (cutsceneSprites.Length > 0)
         {
             cutsceneImage.sprite = cutsceneSprites[currentIndex];
-            narrativeText.text = cutsceneNarratives[currentIndex]; // 设置第一张图片的文本
-            canvasGroup.alpha = 1; // 确保 UI 可见
+            narrativeText.text = cutsceneNarratives[currentIndex]; 
+            canvasGroup.alpha = 1; 
             
         }
         else
@@ -38,7 +38,7 @@ public class CutsceneController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // 左键点击切换下一张
+        if (Input.GetMouseButtonDown(0)) // click for the next image
         {
             NextCutscene();
         }
