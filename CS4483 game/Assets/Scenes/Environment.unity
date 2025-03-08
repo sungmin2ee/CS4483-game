@@ -11935,8 +11935,8 @@ MonoBehaviour:
   player: {fileID: 1353856691}
   pool: {fileID: 389290206}
   gameTime: 0
-  timeRemaining: 90
-  maxGameTime: 20
+  timeRemaining: 30
+  maxGameTime: 200
   level: 0
   kill: 0
   exp: 0

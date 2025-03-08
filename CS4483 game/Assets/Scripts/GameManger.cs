@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     [Header("# Game Control")]
     public float gameTime;
-    public float timeRemaining = 90; // change value later
-    public float maxGameTime = 20f;
+    public float timeRemaining = 30; // change value later
+    public float maxGameTime = 200f;
     [Header("# Player Info")]
     public int level;
     public int kill;
