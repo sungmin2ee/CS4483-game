@@ -3,11 +3,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [Header("# Plaer Input")]
+    [Header("# Player Input")]
     public Player player;
     public PoolManager pool;
     [Header("# Game Control")]
     public float gameTime;
+    public float timeRemaining = 90; // change value later
     public float maxGameTime = 20f;
     [Header("# Player Info")]
     public int level;
@@ -41,6 +42,15 @@ public class GameManager : MonoBehaviour
         {
             gameTime += Time.deltaTime;
             gameTime = Mathf.Min(gameTime, maxGameTime);
+
+            // note: if the following code gets too big, move it to a dedicated function
+            // calculate the time remaining
+            if (timeRemaining > 0) {
+                timeRemaining -= Time.deltaTime;
+            } else {
+                // it might turn negative, so set it to 0 when that happens
+                timeRemaining = 0;
+            }
         }
         
     }
