@@ -3,16 +3,18 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public enum InfoType {Exp, Level, Kill, Time, Health }
+    public enum InfoType {Exp, Level, Kill, Time, Round, Health }
     public InfoType type;
 
     Text levelText;
     Text timeText;
+    Text roundText;
     Slider expSlider;
     private void Awake()
     {
-        levelText = GetComponent<Text>();
         timeText = GetComponent<Text>();
+        roundText = GetComponent<Text>();
+        levelText = GetComponent<Text>();
         expSlider = GetComponent<Slider>();
     }
 
@@ -49,6 +51,10 @@ public class HUD : MonoBehaviour
                 float minutes = Mathf.FloorToInt(timeRemaining / 60);
                 float seconds = Mathf.FloorToInt(timeRemaining % 60);
                 timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+                break;
+
+            case InfoType.Round:
+                roundText.text = string.Format("Round: {0:F0}", GameManager.Instance.round);
                 break;
 
             case InfoType.Health:
