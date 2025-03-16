@@ -3,9 +3,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [Header("# Player Input")]
+    [Header("# Game Object")]
     public Player player;
     public PoolManager pool;
+    public LevelUp uiLevelUp;
     [Header("# Game Control")]
     public float gameTime;
     public float timeRemaining = 30; // change value later
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public int kill;
     public int exp;
     public int[] nextExp = { 3,5, 10, 100, 150, 210, 280, 360, 450, 600 };
+
 
     private void Awake()
     {
@@ -61,7 +63,7 @@ public class GameManager : MonoBehaviour
         {
             level++;
             exp = 0;
-
+            uiLevelUp.Show();
         }
     }
 }
