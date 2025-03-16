@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     float timer;
     int level;
     float spawnInterval = 0.5f;
-    public List<GameObject> spawnedEnemies = new List<GameObject>();
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     private void Awake()
     {
