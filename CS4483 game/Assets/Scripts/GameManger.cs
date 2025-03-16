@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     [Header("# Game Control")]
     public float gameTime;
     public float timeRemaining = 30; // change value later
-    public int round = 1;
-    public bool isRoundActive = true; // when false (in shop or level up screen) time stops
     public float maxGameTime = 200f;
     [Header("# Player Info")]
     public int level;
@@ -42,7 +40,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (player.isAlive && isRoundActive)
+        if (player.isAlive)
         {
             gameTime += Time.deltaTime;
             gameTime = Mathf.Min(gameTime, maxGameTime);
@@ -54,23 +52,6 @@ public class GameManager : MonoBehaviour
             } else {
                 // it might turn negative, so set it to 0 when that happens
                 timeRemaining = 0;
-
-                // round ended, clear all enemies
-
-                // Spawner.ClearSpawnedEnemies();
-                /* does not work -- compiler hates that Spawner is not static
-                 * either Spawner needs to call ClearSpawnedEnemies()
-                 * or GameManager needs to somehow inherit from Spawner
-                 * so for now, just throw up a "Round Cleared!" and set the timeRemaining to back to 30
-                */
-
-                round++;
-                bool inShop = true;
-                // dummy code -- replace with an actual method call for a shop or something (and pause the game)
-                // for now, just set inShop to false and reset the timeRemaining
-                inShop = false;
-
-                timeRemaining = 30;
             }
         }
         
