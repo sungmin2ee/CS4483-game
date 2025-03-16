@@ -205,4 +205,4 @@ MonoBehaviour:
   animCon: []
   dashSpeedMultiplier: 3
   dashDuration: 0.5
-  dashCooldown: 3
+  dashCooldown: 2

@@ -34,15 +34,15 @@ public class Enemy : MonoBehaviour
     {
         isAlive = false;
         Destroy(gameObject); 
+        GameManager.Instance.kill++;
+        GameManager.Instance.GetExp();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("AttackRange") )
+        if (collision.gameObject.CompareTag("AttackRange") ) // keep or not??
         {
            Kill();
-            GameManager.Instance.kill++;
-            GameManager.Instance.GetExp();
         }else if (collision.CompareTag("Bullet"))
         {
             health -= collision.GetComponent<Bullet>().damage;

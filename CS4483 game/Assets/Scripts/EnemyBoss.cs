@@ -5,7 +5,7 @@ public class EnemyBoss : Enemy
 {
     public float dashSpeedMultiplier = 3f;
     public float dashDuration = 0.5f;
-    public float dashCooldown = 3f;
+    public float dashCooldown = 2f;
     private bool isDashing = false;
 
     void Start()
