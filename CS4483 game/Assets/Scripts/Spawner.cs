@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     float timer;
     int level;
     float spawnInterval = 0.5f;
-    private List<GameObject> spawnedEnemies = new List<GameObject>();
+    public List<GameObject> spawnedEnemies = new List<GameObject>();
 
     private void Awake()
     {
@@ -33,6 +33,10 @@ public class Spawner : MonoBehaviour
         {
             timer = 0;
             Spawn();
+        }
+        else if (GameManager.Instance.timeRemaining <= 0)
+        {
+            ClearSpawnedEnemies();
         }
     }
 

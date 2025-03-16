@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
+    public static PoolManager Instance;
     // Instance that will store prefabs
     public GameObject[] prefabs;
     // Lists that will pool prefabs
@@ -16,6 +17,17 @@ public class PoolManager : MonoBehaviour
         {
             pools[index] = new List<GameObject>();
         }
+
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     public GameObject Get(int index)

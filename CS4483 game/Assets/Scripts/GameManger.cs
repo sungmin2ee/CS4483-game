@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,9 +8,13 @@ public class GameManager : MonoBehaviour
     public Player player;
     public PoolManager pool;
     [Header("# Game Control")]
-    public float gameTime;
-    public float timeRemaining = 30; // change value later
-    public float maxGameTime = 200f;
+    public float gameTime = 0;
+    public float timeRemaining = 60; // change value later
+    public float timeBetweenRounds; // hidden timer that gives the player a break after surviving a round
+    public int round = 1;
+    public bool isRoundActive = true; // when false (level up screen or round end) time stops
+    public string[] roundScenes = { "Environment", "Round2", "Round3" }; // change this when the next scenes are committed
+    public float maxGameTime = 300f; // is this actually used?
     [Header("# Player Info")]
     public int level;
     public int kill;
@@ -38,7 +43,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (player.isAlive)
+        if (player.isAlive && isRoundActive) // player is alive (and running from monsters)
         {
             gameTime += Time.deltaTime;
             gameTime = Mathf.Min(gameTime, maxGameTime);
@@ -48,11 +53,27 @@ public class GameManager : MonoBehaviour
             if (timeRemaining > 0) {
                 timeRemaining -= Time.deltaTime;
             } else {
-                // it might turn negative, so set it to 0 when that happens
+                // it might turn negative, so set it to 0 when that happens -- don't let the user see "time remaining: -0:01"
                 timeRemaining = 0;
+
+                // and give the user a 5 second break before the next round starts
+                timeBetweenRounds = 5;
+                isRoundActive = false;
             }
+        } else if (player.isAlive && !isRoundActive && timeRemaining == 0) { // player survived the round
+            //wait the five seconds
+            if (timeBetweenRounds > 0) {
+                timeBetweenRounds -= Time.deltaTime;
+            } else {
+                // increase the round, change the scene, and reset the time
+                round++;
+                timeRemaining = 60;
+                isRoundActive = true;
+                SceneManager.LoadScene("Environment"); // temp code -- only used to check if it works
+                //SceneManager.LoadScene(roundScenes[(round - 1)]); // round - 1 because arrays are 0-indexed
+            } // else player is dead or levelling up -- don't do anything
         }
-        
+
     }
     public void GetExp()
     {

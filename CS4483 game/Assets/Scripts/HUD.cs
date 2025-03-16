@@ -3,34 +3,48 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public enum InfoType {Exp, Level, Kill, Time, Health }
+    public enum InfoType {Level, Exp, Kill, Health, Time, Round, RoundEnd}
     public InfoType type;
 
+    // character hud
     Text levelText;
-    Text timeText;
     Slider expSlider;
+
+    // round hud
+    Text timeText;
+    Text roundText;
+    Text roundEndText;
+
     private void Awake()
     {
+        // character hud
         levelText = GetComponent<Text>();
-        timeText = GetComponent<Text>();
         expSlider = GetComponent<Slider>();
+
+        // round hud
+        timeText = GetComponent<Text>();
+        roundText = GetComponent<Text>();
+        roundEndText = GetComponent<Text>();
     }
 
     private void LateUpdate()
     {
         switch (type)
         {
+            case InfoType.Level:
+                levelText.text = string.Format("Level: {0:F0}", GameManager.Instance.level);
+                break;
+
             case InfoType.Exp:
                 float curExp = GameManager.Instance.exp;
                 float maxExp = GameManager.Instance.nextExp[GameManager.Instance.level];
                 expSlider.value = curExp/maxExp;
                 break;
 
-            case InfoType.Level:
-                levelText.text = string.Format("Lv.{0:F0}", GameManager.Instance.level);
+            case InfoType.Kill:
                 break;
 
-            case InfoType.Kill:
+            case InfoType.Health:
                 break;
 
             case InfoType.Time:
@@ -51,10 +65,16 @@ public class HUD : MonoBehaviour
                 timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
                 break;
 
-            case InfoType.Health:
+            case InfoType.Round:
+                roundText.text = string.Format("Round: {0:F0}", GameManager.Instance.round);
                 break;
 
-
+            case InfoType.RoundEnd:
+                if (GameManager.Instance.timeRemaining == 0) {
+                    // display round end celebration
+                    roundEndText.text = "Round " + GameManager.Instance.round + " Complete!";
+                } else roundEndText.text = ""; // don't display anything if we're not between rounds
+                break;
 
         }
     }
