@@ -34,13 +34,27 @@ public class Spawner : MonoBehaviour
 
         timer += Time.deltaTime;
         level = Mathf.Clamp(Mathf.FloorToInt(GameManager.Instance.gameTime / 10f), 0, spawnData.Length - 1);
+        // Debug.Log("Boss Spawned: " + GameManager.Instance.pool.bossSpawned);    
+        
+        // logic of generating boss: boss will be generate at round 3
+        if (!GameManager.Instance.pool.bossSpawned && timer > spawnData[level].spawnTime && GameManager.Instance.round == 3) 
+        {
+            
+            GameManager.Instance.pool.bossSpawned = true; 
+            SpawnBoss();
+        }   
 
+        // generate normal enemies
         if (timer > spawnData[level].spawnTime && GameManager.Instance.timeRemaining > 0)
         {
             timer = 0;
             Spawn();
         }
-        else if (GameManager.Instance.timeRemaining <= 0)
+        
+
+
+        
+        if (GameManager.Instance.timeRemaining <= 0)
         {
             ClearSpawnedEnemies();
         }
@@ -58,6 +72,25 @@ public class Spawner : MonoBehaviour
         enemy.transform.position = spawnPoint[randomIndex].position;
         enemy.GetComponent<Enemy>().Init(spawnData[level]);
         spawnedEnemies.Add(enemy);
+    }
+
+    private void SpawnBoss()
+    {
+        if (spawnPoint.Length <= 1) return;
+
+        GameObject boss = GameManager.Instance.pool.Get(3); 
+        int randomIndex = Random.Range(1, spawnPoint.Length);
+        boss.transform.position = spawnPoint[randomIndex].position;
+        
+        boss.GetComponent<EnemyBoss>().Init(new SpawnData
+        {
+            spawnTime = 0, 
+            spriteType = 2, 
+            health = 100, 
+            speed = 2f
+        });
+
+        spawnedEnemies.Add(boss);
     }
 
     public void ClearSpawnedEnemies()

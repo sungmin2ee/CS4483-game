@@ -9,6 +9,8 @@ public class PoolManager : MonoBehaviour
     public GameObject[] prefabs;
     // Lists that will pool prefabs
     List<GameObject>[] pools;
+    // record if the boss is generated or not
+    public bool bossSpawned = false;
 
     private void Awake()
     {
