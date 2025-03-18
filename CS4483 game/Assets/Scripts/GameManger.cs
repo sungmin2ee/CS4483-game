@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public LevelUp uiLevelUp;
     [Header("# Game Control")]
     public float gameTime = 0;
-    public float timeRemaining = 60; // change value later
+    public float timeRemaining = 5; // change value later
     public float timeBetweenRounds; // hidden timer that gives the player a break after surviving a round
     public int round = 1;
     public bool isRoundActive = true; // when false (level up screen or round end) time stops
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             {
                 // increase the round, change the scene, and reset the time
                 round++;
-                timeRemaining = 60;
+                timeRemaining = 5;      /** temp changes, for testing**/
                 isRoundActive = true;
                 SceneManager.LoadScene("Environment"); // temp code -- only used to check if it works
                 //SceneManager.LoadScene(roundScenes[(round - 1)]); // round - 1 because arrays are 0-indexed
