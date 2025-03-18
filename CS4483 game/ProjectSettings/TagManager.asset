@@ -11,6 +11,8 @@ TagManager:
   - Gate
   - NPC
   - Bullet
+  - CameraConfiner
+  - SpawnConfiner
   layers:
   - Default
   - TransparentFX

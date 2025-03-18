@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour
     float spawnInterval = 0.5f;
     private List<GameObject> spawnedEnemies = new List<GameObject>();
 
+    private Collider2D spawnBound;    // used for making sure the enemy is spawning within the camera confiner
+
     private void Awake()
     {
         spawnPoint = GetComponentsInChildren<Transform>();
@@ -18,6 +20,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        spawnBound = GameObject.FindWithTag("SpawnConfiner").GetComponent<Collider2D>();
         if (spawnData == null || spawnData.Length == 0)
         {
 
@@ -35,7 +38,7 @@ public class Spawner : MonoBehaviour
         timer += Time.deltaTime;
         level = Mathf.Clamp(Mathf.FloorToInt(GameManager.Instance.gameTime / 10f), 0, spawnData.Length - 1);
         // Debug.Log("Boss Spawned: " + GameManager.Instance.pool.bossSpawned);    
-        
+
         // logic of generating boss: boss will be generate at round 3
         if (!GameManager.Instance.pool.bossSpawned && timer > spawnData[level].spawnTime && GameManager.Instance.round == 3) 
         {
@@ -62,26 +65,40 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        if (spawnPoint.Length <= 1)
+        if (spawnPoint.Length <= 1 || spawnBound == null) return;
+
+        int randomIndex = Random.Range(1, spawnPoint.Length);
+        Vector2 spawnPos = spawnPoint[randomIndex].position;
+
+        // check if spawn point is in the bounds
+        if (!spawnBound.OverlapPoint(spawnPos))
         {
-            return;
+            // Debug.Log("Spawner tried to spawn outside CameraConfiner, adjusting...");
+            spawnPos = spawnBound.ClosestPoint(spawnPos); // restrict it toclosest spawning point
         }
 
         GameObject enemy = GameManager.Instance.pool.Get(0);
-        int randomIndex = Random.Range(1, spawnPoint.Length);
-        enemy.transform.position = spawnPoint[randomIndex].position;
+        enemy.transform.position = spawnPos;
         enemy.GetComponent<Enemy>().Init(spawnData[level]);
         spawnedEnemies.Add(enemy);
     }
 
     private void SpawnBoss()
     {
-        if (spawnPoint.Length <= 1) return;
+        if (spawnPoint.Length <= 1 || spawnBound == null) return;
 
-        GameObject boss = GameManager.Instance.pool.Get(3); 
         int randomIndex = Random.Range(1, spawnPoint.Length);
-        boss.transform.position = spawnPoint[randomIndex].position;
-        
+        Vector2 spawnPos = spawnPoint[randomIndex].position;
+
+        // check if spawn point is in the bounds
+        if (!spawnBound.OverlapPoint(spawnPos))
+        {
+            // Debug.Log("Spawner tried to spawn outside CameraConfiner, adjusting...");
+            spawnPos = spawnBound.ClosestPoint(spawnPos);
+        }
+
+        GameObject boss = GameManager.Instance.pool.Get(3);
+        boss.transform.position = spawnPos;
         boss.GetComponent<EnemyBoss>().Init(new SpawnData
         {
             spawnTime = 0, 
@@ -89,7 +106,6 @@ public class Spawner : MonoBehaviour
             health = 100, 
             speed = 2f
         });
-
         spawnedEnemies.Add(boss);
     }
 
