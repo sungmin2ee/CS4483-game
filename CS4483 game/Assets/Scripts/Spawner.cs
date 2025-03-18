@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,17 +16,24 @@ public class Spawner : MonoBehaviour
         spawnPoint = GetComponentsInChildren<Transform>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        if (spawnData == null || spawnData.Length == 0)
+        {
+
+        }
+    }
+
     void Update()
     {
         if (GameManager.Instance == null)
         {
-            Debug.LogError("GameManager.Instance is null! Make sure GameManager exists in the scene.");
+
             return;
         }
 
         timer += Time.deltaTime;
-        level = Mathf.FloorToInt(GameManager.Instance.gameTime / 10f);
+        level = Mathf.Clamp(Mathf.FloorToInt(GameManager.Instance.gameTime / 10f), 0, spawnData.Length - 1);
 
         if (timer > spawnData[level].spawnTime && GameManager.Instance.timeRemaining > 0)
         {
@@ -42,8 +48,14 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
+        if (spawnPoint.Length <= 1)
+        {
+            return;
+        }
+
         GameObject enemy = GameManager.Instance.pool.Get(0);
-        enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        int randomIndex = Random.Range(1, spawnPoint.Length);
+        enemy.transform.position = spawnPoint[randomIndex].position;
         enemy.GetComponent<Enemy>().Init(spawnData[level]);
         spawnedEnemies.Add(enemy);
     }
@@ -60,6 +72,7 @@ public class Spawner : MonoBehaviour
         spawnedEnemies.Clear();
     }
 }
+
 [System.Serializable]
 public class SpawnData
 {
@@ -67,5 +80,4 @@ public class SpawnData
     public int spriteType;
     public int health;
     public float speed;
-
 }

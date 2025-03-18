@@ -8,14 +8,18 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     private Vector2 movement;
     private Rigidbody2D rb;
-    public GameObject attackRange;
+    public Scanner scanner;
     private SpriteRenderer spriteRenderer;
     public bool isAlive;
 
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        scanner = GetComponent<Scanner>();
+    }
+    void Start()
+    {
 
         if (Instance == null)
         {
@@ -41,7 +45,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && collision.gameObject != attackRange)
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             spriteRenderer.color = Color.gray;
             Time.timeScale = 0f;

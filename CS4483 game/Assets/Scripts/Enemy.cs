@@ -33,22 +33,24 @@ public class Enemy : MonoBehaviour
     void Kill()
     {
         isAlive = false;
-        Destroy(gameObject); 
+        Destroy(gameObject);
         GameManager.Instance.kill++;
         GameManager.Instance.GetExp();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("AttackRange") ) // keep or not??
+        if (collision.gameObject.CompareTag("AttackRange")) // keep or not??
         {
-           Kill();
-        }else if (collision.CompareTag("Bullet"))
+            Kill();
+        }
+        else if (collision.CompareTag("Bullet"))
         {
             health -= collision.GetComponent<Bullet>().damage;
-            if(health > 0)
+            if (health > 0)
             {
                 //live ,hit action
+
             }
             else
             {
@@ -65,7 +67,7 @@ public class Enemy : MonoBehaviour
     public void Init(SpawnData data)
     {
         anim.runtimeAnimatorController = animCon[data.spriteType];
-        speed =data.speed;
+        speed = data.speed;
         maxHealth = data.health;
         health = data.health;
     }

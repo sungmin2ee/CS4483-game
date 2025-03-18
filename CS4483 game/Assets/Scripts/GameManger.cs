@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("# Player Input")]
     public Player player;
     public PoolManager pool;
+    public LevelUp uiLevelUp;
     [Header("# Game Control")]
     public float gameTime = 0;
     public float timeRemaining = 60; // change value later
@@ -19,19 +20,19 @@ public class GameManager : MonoBehaviour
     public int level;
     public int kill;
     public int exp;
-    public int[] nextExp = { 3,5, 10, 100, 150, 210, 280, 360, 450, 600 };
+    public int[] nextExp = { 3, 5, 10, 100, 150, 210, 280, 360, 450, 600 };
 
     private void Awake()
     {
-       
+
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);  
+            Destroy(gameObject);
         }
     }
 
@@ -50,9 +51,12 @@ public class GameManager : MonoBehaviour
 
             // note: if the following code gets too big, move it to a dedicated function
             // calculate the time remaining
-            if (timeRemaining > 0) {
+            if (timeRemaining > 0)
+            {
                 timeRemaining -= Time.deltaTime;
-            } else {
+            }
+            else
+            {
                 // it might turn negative, so set it to 0 when that happens -- don't let the user see "time remaining: -0:01"
                 timeRemaining = 0;
 
@@ -60,11 +64,16 @@ public class GameManager : MonoBehaviour
                 timeBetweenRounds = 5;
                 isRoundActive = false;
             }
-        } else if (player.isAlive && !isRoundActive && timeRemaining == 0) { // player survived the round
+        }
+        else if (player.isAlive && !isRoundActive && timeRemaining == 0)
+        { // player survived the round
             //wait the five seconds
-            if (timeBetweenRounds > 0) {
+            if (timeBetweenRounds > 0)
+            {
                 timeBetweenRounds -= Time.deltaTime;
-            } else {
+            }
+            else
+            {
                 // increase the round, change the scene, and reset the time
                 round++;
                 timeRemaining = 60;
@@ -82,7 +91,7 @@ public class GameManager : MonoBehaviour
         {
             level++;
             exp = 0;
-
+            uiLevelUp.Show();
         }
     }
 }
