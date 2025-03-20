@@ -71,6 +71,14 @@ public class Enemy : MonoBehaviour
         maxHealth = data.health;
         health = data.health;
     }
+    public void changeHealth(int amount)
+    {
+        health += amount;
+        if (health <= 0)
+        {
+            Kill();
+        }
+    }
 
 
 }

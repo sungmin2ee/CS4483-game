@@ -7,8 +7,13 @@ public class LevelUp : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+       
         rect = GetComponent<RectTransform>();
         items = GetComponentsInChildren<Item>(true);
+    }
+    private void Start()
+    {
+        Hide();
     }
 
     // Update is called once per frame
