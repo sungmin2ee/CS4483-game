@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public Scanner scanner;
     private SpriteRenderer spriteRenderer;
     public bool isAlive;
+    public int health = 3;
+    public float invulverable = 0;
     public float attackRange = 2;
     public int attackDamage = 3;
     private float attackCooldown = 1f;
@@ -50,6 +52,18 @@ public class Player : MonoBehaviour
         {
             lastMoveDirection = movement.normalized;
         }
+
+        // if a user gets hit, they are invulnerable for a short time
+        // this is to prevent the user from getting hit multiple times in a row
+        // the following will turn them back to normal after a short time
+        if (invulverable > 0) {
+            invulverable -= Time.deltaTime;
+            spriteRenderer.color = Color.gray;
+        } else if (invulverable <= 0) {
+            invulverable = 0;
+            spriteRenderer.color = Color.white;
+        }
+
     }
 
     void FixedUpdate()
@@ -59,10 +73,23 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        // check if they can be hurt
+        if (invulverable == 0)
         {
-            spriteRenderer.color = Color.gray;
-            //Time.timeScale = 0f;
+            // check if they are hit by an enemy and wouldn't die
+            if (collision.gameObject.CompareTag("Enemy") && health > 1)
+            {
+                health--;
+                bool heartflash = true; // dummy code
+                invulverable = 3; // set them invulnerable for 3 seconds
+            }
+            // check if they are hit by an enemy and would die
+            else if (collision.gameObject.CompareTag("Enemy") && health <= 1)
+            {
+                spriteRenderer.color = Color.gray;
+                // game over
+                Time.timeScale = 0f;
+            }
         }
     }
     void Attack()
