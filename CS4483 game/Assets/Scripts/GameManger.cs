@@ -10,12 +10,13 @@ public class GameManager : MonoBehaviour
     public LevelUp uiLevelUp;
     [Header("# Game Control")]
     public float gameTime = 0;
-    public float timeRemaining = 60; // change value later
+    public const float resetTime = 30; // change value later
+    public float timeRemaining = resetTime; // change value later
     public float timeBetweenRounds; // hidden timer that gives the player a break after surviving a round
     public int round = 1;
     public bool isRoundActive = true; // when false (level up screen or round end) time stops
     public string[] roundScenes = { "Environment", "Round2", "Round3" }; // change this when the next scenes are committed
-    public float maxGameTime = 300f; // is this actually used?
+    //public float maxGameTime = 300f; // is this actually used?
     [Header("# Player Info")]
     public int level;
     public int kill;
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
         if (player.isAlive && isRoundActive) // player is alive (and running from monsters)
         {
             gameTime += Time.deltaTime;
-            gameTime = Mathf.Min(gameTime, maxGameTime);
+            //gameTime = Mathf.Min(gameTime, maxGameTime);
 
             // note: if the following code gets too big, move it to a dedicated function
             // calculate the time remaining
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
             {
                 // increase the round, change the scene, and reset the time
                 round++;
-                timeRemaining =60;      /** temp changes, for testing**/
+                timeRemaining = resetTime;   
                 isRoundActive = true;
                 SceneManager.LoadScene("Environment"); // temp code -- only used to check if it works
                 //SceneManager.LoadScene(roundScenes[(round - 1)]); // round - 1 because arrays are 0-indexed
