@@ -44,6 +44,12 @@ public class GameManager : MonoBehaviour
             Debug.LogError("GameManager: Player is null! Make sure Player is assigned in the Inspector.");
             return;
         }
+        if(!player.isAlive) // if player dead
+        {
+            Debug.Log("Dead!!!!");
+            
+            // SceneManager.LoadScene("FailScene");
+        }
 
         if (player.isAlive && isRoundActive) // player is alive (and running from monsters)
         {
@@ -81,7 +87,7 @@ public class GameManager : MonoBehaviour
                 isRoundActive = true;
                 SceneManager.LoadScene("Environment"); // temp code -- only used to check if it works
                 //SceneManager.LoadScene(roundScenes[(round - 1)]); // round - 1 because arrays are 0-indexed
-            } // else player is dead or levelling up -- don't do anything
+            } // else levelling up -- don't do anything
         }
 
     }

@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
             else if (collision.gameObject.CompareTag("Enemy") && health <= 1)
             {
                 spriteRenderer.color = Color.gray;
+                isAlive = false;
                 // game over
                 Time.timeScale = 0f;
             }
