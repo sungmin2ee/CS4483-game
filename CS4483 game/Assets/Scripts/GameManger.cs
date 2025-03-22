@@ -46,9 +46,9 @@ public class GameManager : MonoBehaviour
         }
         if(!player.isAlive) // if player dead
         {
-            Debug.Log("Dead!!!!");
-            
-            // SceneManager.LoadScene("FailScene");
+            Debug.Log("Dead!!!! Loading FailScene");
+            ClearPersistentObjects();
+            SceneManager.LoadScene("FailScene");    // switch to fail scene if player dead
         }
 
         if (player.isAlive && isRoundActive) // player is alive (and running from monsters)
@@ -83,6 +83,16 @@ public class GameManager : MonoBehaviour
             {
                 // increase the round, change the scene, and reset the time
                 round++;
+
+                // if player complete round 3, and alive, then wins the game
+                if (round > 3) {
+                    Debug.Log("All rounds cleared! Loading SuccessScene...");
+                    ClearPersistentObjects();
+                    SceneManager.LoadScene("SuccessScene");
+                    return;
+                }
+
+                // else reset time
                 timeRemaining = resetTime;   
                 isRoundActive = true;
                 SceneManager.LoadScene("Environment"); // temp code -- only used to check if it works
@@ -101,4 +111,23 @@ public class GameManager : MonoBehaviour
             uiLevelUp.Show();
         }
     }
+
+    // wipe out all the dontDestroy elements in the scene, making sure it wont be bring to next scene
+    public void ClearPersistentObjects()
+    {
+        Debug.Log("Clearing persistent objects before scene change...");
+
+        if (player != null)
+            Destroy(player.gameObject);
+
+        if (pool != null)
+            Destroy(pool.gameObject);
+
+        Destroy(gameObject);
+
+
+    }
+    
+
+
 }
