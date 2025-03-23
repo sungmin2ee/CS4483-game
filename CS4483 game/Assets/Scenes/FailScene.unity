@@ -482,7 +482,6 @@ GameObject:
   - component: {fileID: 1332423257}
   - component: {fileID: 1332423256}
   - component: {fileID: 1332423255}
-  - component: {fileID: 1332423254}
   - component: {fileID: 1332423253}
   m_Layer: 5
   m_Name: Canvas
@@ -503,31 +502,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1332423254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332423252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8bd3b130dcd9e04fbe2833c08608bf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutsceneImage: {fileID: 1398719054}
-  narrativeText: {fileID: 33515192}
-  canvasGroup: {fileID: 1332423253}
-  cutsceneSprites:
-  - {fileID: -6525251533827417197, guid: ddc7e37ea2bb39a47a4c55840cf57e14, type: 3}
-  - {fileID: -154269249030348198, guid: 5e1a359e411a8e140935f89aedd7a50d, type: 3}
-  - {fileID: -7465307106225235979, guid: 826e28740473b0c49853f161ae32c09d, type: 3}
-  - {fileID: -7083523246791027351, guid: 94eeaa6307e29414aa8ad4b9e932d318, type: 3}
-  - {fileID: -6047493898223882553, guid: 50c32c124874f2b4b922a48ad80ba5a0, type: 3}
-  - {fileID: 5787426498330204712, guid: f3761ffc2d12b5a43918a98cd84eb3d6, type: 3}
-  cutsceneNarratives: []
-  nextSceneName: StartingPage
-  fadeDuration: 0.5
 --- !u!114 &1332423255
 MonoBehaviour:
   m_ObjectHideFlags: 0
