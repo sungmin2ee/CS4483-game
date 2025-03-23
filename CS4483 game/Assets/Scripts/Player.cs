@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public float invulverable = 0;
     public float attackRange = 2;
     public int attackDamage = 3;
-    private float attackCooldown = 1f;
+    private float attackCooldown = 0.5f;
     private float lastAttackTime = 0f; 
     private Vector2 lastMoveDirection = Vector2.right;
     private void Awake()
@@ -111,8 +111,9 @@ public class Player : MonoBehaviour
             Enemy enemyController = enemy.GetComponent<Enemy>();
             if (enemyController != null)
             {
-                enemyController.changeHealth(-attackDamage); 
-                
+                enemyController.changeHealth(-attackDamage);
+                enemyController.anim.SetTrigger("Hit");
+                enemyController.StartCoroutine(enemyController.KnockBack());
             }
         }
     }

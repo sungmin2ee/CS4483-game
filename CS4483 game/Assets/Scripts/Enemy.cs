@@ -12,16 +12,18 @@ public class Enemy : MonoBehaviour
     public float health;
     public float maxHealth;
     public RuntimeAnimatorController[] animCon;
-    Animator anim;
+    public Animator anim;
+    WaitForFixedUpdate wait;
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        wait = new WaitForFixedUpdate();
     }
 
     void FixedUpdate()
     {
-        if (!isAlive || target == null)
+        if (!isAlive || target == null || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
         Vector2 dirVec = target.position - rigid.position;
@@ -47,8 +49,10 @@ public class Enemy : MonoBehaviour
         else if (collision.CompareTag("Bullet"))
         {
             health -= collision.GetComponent<Bullet>().damage;
+            StartCoroutine(KnockBack());
             if (health > 0)
             {
+                anim.SetTrigger("Hit");
                 //live ,hit action
 
             }
@@ -78,6 +82,13 @@ public class Enemy : MonoBehaviour
         {
             Kill();
         }
+    }
+    public IEnumerator KnockBack()
+    {
+        yield return wait; // delay for next physical frame
+        Vector3 playerPos = GameManager.Instance.player.transform.position;
+        Vector3 dirVec = transform.position - playerPos;
+        rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
     }
 
 
