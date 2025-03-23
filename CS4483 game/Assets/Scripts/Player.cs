@@ -116,4 +116,10 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void ResetPlayer()
+    {
+        isAlive = true;
+        health = 3; // from what we have decided? 
+    }
 }

@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
     public int exp;
     public int[] nextExp = { 3, 5, 10, 100, 150, 210, 280, 360, 450, 600 };
 
+
+     void Start()
+    {
+        resetAll();
+    }
+
     private void Awake()
     {
 
@@ -44,11 +50,12 @@ public class GameManager : MonoBehaviour
             Debug.LogError("GameManager: Player is null! Make sure Player is assigned in the Inspector.");
             return;
         }
-        if(!player.isAlive) // if player dead
+        if(player.health <= 1) // if player dead
         {
             Debug.Log("Dead!!!! Loading FailScene");
             ClearPersistentObjects();
             SceneManager.LoadScene("FailScene");    // switch to fail scene if player dead
+            return;
         }
 
         if (player.isAlive && isRoundActive) // player is alive (and running from monsters)
@@ -124,10 +131,30 @@ public class GameManager : MonoBehaviour
             Destroy(pool.gameObject);
 
         Destroy(gameObject);
-
-
     }
     
+    // reset game if wins
+    private void resetAll() 
+    {
+        Debug.Log("Resetting all game state...");
 
+        // Reset core gameplay state
+        gameTime = 0;
+        round = 1;
+        timeRemaining = resetTime;
+        timeBetweenRounds = 0f;
+        isRoundActive = true;
+
+        // Reset player progression
+        kill = 0;
+        exp = 0;
+        level = 0;
+
+        // Reset player status if still in scene
+        if (player != null)
+        {
+            player.ResetPlayer(); // 你需要在 Player 脚本中添加这个方法（见下方）
+        }
+        }
 
 }
