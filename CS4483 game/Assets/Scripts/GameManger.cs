@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
         // Reset player status if still in scene
         if (player != null)
         {
-            player.ResetPlayer(); // 你需要在 Player 脚本中添加这个方法（见下方）
+            player.ResetPlayer(); 
         }
         }
 
