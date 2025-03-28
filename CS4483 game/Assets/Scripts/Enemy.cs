@@ -34,6 +34,10 @@ public class Enemy : MonoBehaviour
 
     void Kill()
     {
+        //if the player already died, do nothing
+        if (Player.Instance.isAlive == false) 
+            return;
+
         isAlive = false;
         Destroy(gameObject);
         GameManager.Instance.kill++;

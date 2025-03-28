@@ -1,17 +1,19 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 
 public class Player : MonoBehaviour
 {
 
     public static Player Instance;
-    public float speed = 3f;
+    public float speed = 3.25f; // 3 feels slightly too slow?
     private Vector2 movement;
     private Rigidbody2D rb;
     public Scanner scanner;
     private SpriteRenderer spriteRenderer;
     public bool isAlive;
-    public int health = 3;
+    public int maxHealth = 3;
+    public int currHealth = 3;
     public float invulverable = 0;
     public float attackRange = 2;
     public int attackDamage = 3;
@@ -43,12 +45,12 @@ public class Player : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
             Debug.Log("attack");
         }
-        if (movement != Vector2.zero) 
+        if (movement != Vector2.zero)
         {
             lastMoveDirection = movement.normalized;
         }
@@ -56,7 +58,9 @@ public class Player : MonoBehaviour
         // if a user gets hit, they are invulnerable for a short time
         // this is to prevent the user from getting hit multiple times in a row
         // the following will turn them back to normal after a short time
-        if (invulverable > 0) {
+        if (currHealth == 0) {
+            spriteRenderer.color = Color.black;
+        } else if (invulverable > 0) {
             invulverable -= Time.deltaTime;
             spriteRenderer.color = Color.gray;
         } else if (invulverable <= 0) {
@@ -77,19 +81,25 @@ public class Player : MonoBehaviour
         if (invulverable == 0)
         {
             // check if they are hit by an enemy and wouldn't die
-            if (collision.gameObject.CompareTag("Enemy") && health > 1)
+            if (collision.gameObject.CompareTag("Enemy") && currHealth > 1)
             {
-                health--;
-                bool heartflash = true; // dummy code
-                invulverable = 3; // set them invulnerable for 3 seconds
-            }
-            // check if they are hit by an enemy and would die
-            else if (collision.gameObject.CompareTag("Enemy") && health <= 1)
-            {
-                spriteRenderer.color = Color.gray;
-                isAlive = false;
+                invulverable = 3;
+                currHealth--;
+                // set them invulnerable for 3 seconds
+                // after 3 seconds, remove a health point -- they can be hurt again
+
+            } else if (collision.gameObject.CompareTag("Enemy") && currHealth <= 1) {
                 // game over
-                Time.timeScale = 0f;
+                currHealth = 0;
+                isAlive = false;
+
+                // freeze the player
+                speed = 0;
+                //note: this still doesn't stop the items from damaging enemies
+
+                // give the user some time to see the game over message
+                GameManager.Instance.timeBetweenRounds = 5;
+                // (GameManager handles the game over state)
             }
         }
     }
@@ -121,6 +131,8 @@ public class Player : MonoBehaviour
     public void ResetPlayer()
     {
         isAlive = true;
-        health = 3; // from what we have decided? 
+        speed = 3.25f;
+        maxHealth = 3; // from what we have decided?
+        currHealth = maxHealth;
     }
 }

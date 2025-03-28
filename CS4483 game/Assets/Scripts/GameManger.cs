@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public int round = 1;
     public bool isRoundActive = true; // when false (level up screen or round end) time stops
     public string[] roundScenes = { "Environment", "Round2", "Round3" }; // change this when the next scenes are committed
-    //public float maxGameTime = 300f; // is this actually used?
     [Header("# Player Info")]
     public int level;
     public int kill;
@@ -45,68 +44,69 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // check if the player character exists
         if (player == null)
         {
             Debug.LogError("GameManager: Player is null! Make sure Player is assigned in the Inspector.");
             return;
         }
-        if(player.health <= 1) // if player dead
+
+        // check if the round is active
+        if (isRoundActive == true)
         {
-            Debug.Log("Dead!!!! Loading FailScene");
-            ClearPersistentObjects();
-            SceneManager.LoadScene("FailScene");    // switch to fail scene if player dead
-            return;
-        }
+            // check if the player is alive
+            if (player.isAlive == true) {
+                // player is alive and the round is active; continue
 
-        if (player.isAlive && isRoundActive) // player is alive (and running from monsters)
-        {
-            gameTime += Time.deltaTime;
-            //gameTime = Mathf.Min(gameTime, maxGameTime);
+                gameTime += Time.deltaTime; // globlal game time
+                if (timeRemaining > 0) { // round time
+                    timeRemaining -= Time.deltaTime;
+                } else { // if timeRemaining is 0, the round is over
 
-            // note: if the following code gets too big, move it to a dedicated function
-            // calculate the time remaining
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                // it might turn negative, so set it to 0 when that happens -- don't let the user see "time remaining: -0:01"
-                timeRemaining = 0;
-
-                // and give the user a 5 second break before the next round starts
-                timeBetweenRounds = 5;
+                    // it might turn negative, so set it to 0 when that happens -- don't let the user see "time remaining: -0:01"
+                    timeRemaining = 0;
+                    timeBetweenRounds = 3; // 3 sec break between rounds
+                    isRoundActive = false; 
+                }
+            } else { // player is dead; stop the game
+                timeBetweenRounds = 3; // 3 sec break to show the game over message
                 isRoundActive = false;
             }
-        }
-        else if (player.isAlive && !isRoundActive && timeRemaining == 0)
-        { // player survived the round
-            //wait the five seconds
-            if (timeBetweenRounds > 0)
-            {
+        } else { // round is not active
+            // check if they are in the break between rounds
+            if (timeBetweenRounds > 0) {
                 timeBetweenRounds -= Time.deltaTime;
-            }
-            else
-            {
-                // increase the round, change the scene, and reset the time
-                round++;
+            } else { // break is over
 
-                // if player complete round 3, and alive, then wins the game
-                if (round > 3) {
+                //check if they died, completed the game, or are ready for the next round
+                if (player.isAlive == false) // game over
+                {
+                    Debug.Log("Dead!!!! Loading FailScene");
+                    ClearPersistentObjects();
+                    SceneManager.LoadScene("FailScene");    // switch to fail scene if player dead
+                    return;
+                }
+
+                if (round == 3 && timeRemaining == 0) { // victory condition
+                    // we should probably have a "roundMax" var for this
                     Debug.Log("All rounds cleared! Loading SuccessScene...");
                     ClearPersistentObjects();
                     SceneManager.LoadScene("SuccessScene");
                     return;
                 }
 
-                // else reset time
-                timeRemaining = resetTime;   
-                isRoundActive = true;
-                SceneManager.LoadScene("Environment"); // temp code -- only used to check if it works
-                //SceneManager.LoadScene(roundScenes[(round - 1)]); // round - 1 because arrays are 0-indexed
-            } // else levelling up -- don't do anything
-        }
+                if (timeRemaining == 0) { // completed a round
 
+                    round++;
+                    timeRemaining = resetTime;
+                    isRoundActive = true;
+                    SceneManager.LoadScene("Environment"); // would be changed when we get more levels/maps/scenes to play in
+                    //SceneManager.LoadScene(roundScenes[(round - 1)]); // round - 1 because arrays are 0-indexed
+                }
+
+                // else the player is in a level up screen
+            }
+        }
     }
     public void GetExp()
     {
@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
         kill = 0;
         exp = 0;
         level = 0;
+        
 
         // Reset player status if still in scene
         if (player != null)

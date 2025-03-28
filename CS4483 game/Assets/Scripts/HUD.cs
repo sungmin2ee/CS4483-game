@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public enum InfoType {Level, Exp, Kill, Health, Time, Round, RoundEnd}
+    public enum InfoType { Level, Exp, Kill, Health, Time, Round, RoundEnd_GameEnd}
     public InfoType type;
 
     // character hud
     Text levelText;
     Slider expSlider;
+    Slider hpBar;
 
     // round hud
     Text timeText;
@@ -20,6 +21,7 @@ public class HUD : MonoBehaviour
         // character hud
         levelText = GetComponent<Text>();
         expSlider = GetComponent<Slider>();
+        hpBar = GetComponent<Slider>();
 
         // round hud
         timeText = GetComponent<Text>();
@@ -45,6 +47,7 @@ public class HUD : MonoBehaviour
                 break;
 
             case InfoType.Health:
+                hpBar.value = (float) Player.Instance.currHealth / (float) Player.Instance.maxHealth;
                 break;
 
             case InfoType.Time:
@@ -69,11 +72,19 @@ public class HUD : MonoBehaviour
                 roundText.text = string.Format("Round: {0:F0}", GameManager.Instance.round);
                 break;
 
-            case InfoType.RoundEnd:
-                if (GameManager.Instance.timeRemaining == 0) {
-                    // display round end celebration
-                    roundEndText.text = "Round " + GameManager.Instance.round + " Complete!";
-                } else roundEndText.text = ""; // don't display anything if we're not between rounds
+            case InfoType.RoundEnd_GameEnd:
+                int round = GameManager.Instance.round;
+                // check if alive
+                if (Player.Instance.isAlive == false) {
+                    roundEndText.text = "You fell to the monsters...";
+                } // else, check if they won
+                else if ((GameManager.Instance.timeRemaining == 0) && round == 3) {
+                    roundEndText.text = "You fought back all the monsters!";
+                } // else, check if they finished a round
+                else if (GameManager.Instance.timeRemaining == 0) {                    
+                    roundEndText.text = "Round " + round + " complete!";
+                } // else, don't display anything
+                else roundEndText.text = ""; // don't display anything if we're not between rounds
                 break;
 
         }

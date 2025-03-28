@@ -1,3 +1,5 @@
+// are we actually using this script?
+
 using UnityEngine;
 
 public class GateManager : MonoBehaviour
