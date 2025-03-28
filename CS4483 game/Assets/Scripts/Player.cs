@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
+
 
 public class Player : MonoBehaviour
 {
@@ -70,9 +70,7 @@ public class Player : MonoBehaviour
         // if a user gets hit, they are invulnerable for a short time
         // this is to prevent the user from getting hit multiple times in a row
         // the following will turn them back to normal after a short time
-        if (currHealth == 0) {
-            spriteRenderer.color = Color.black;
-        } else if (invulverable > 0) {
+        if (invulverable > 0) {
             invulverable -= Time.deltaTime;
             spriteRenderer.color = Color.gray;
         }
@@ -109,13 +107,15 @@ public class Player : MonoBehaviour
                 // pause background music and play die animation
                 audioSource.Pause();
                 animator.SetTrigger("Die");
-                StartCoroutine(GameOverAfterAnimation());
+                //gameover animation
+
+                //StartCoroutine(GameOverAfterAnimation());
                 // freeze the player
                 speed = 0;
                 //note: this still doesn't stop the items from damaging enemies
 
                 // give the user some time to see the game over message
-                GameManager.Instance.timeBetweenRounds = 5;
+                GameManager.Instance.timeBetweenRounds = 3;
                 // (GameManager handles the game over state)
             }
         }
@@ -153,14 +153,12 @@ public class Player : MonoBehaviour
         currHealth = maxHealth;
     }
 
-        private IEnumerator GameOverAfterAnimation()
+     private IEnumerator GameOverAfterAnimation()
     {
         // Waiting until animation is finished
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
         // Game over
         Time.timeScale = 0f;
-
-
     }
 }
