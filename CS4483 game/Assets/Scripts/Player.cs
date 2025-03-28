@@ -161,6 +161,6 @@ public class Player : MonoBehaviour
         // Game over
         Time.timeScale = 0f;
 
->>>>>>> Stashed changes
+
     }
 }
