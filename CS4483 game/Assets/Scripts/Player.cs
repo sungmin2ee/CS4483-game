@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public float speed = 3.25f; // 3 feels slightly too slow?
     private Vector2 movement;
     private Rigidbody2D rb;
+    private Animator animator;
+    private AudioSource audioSource;
     public Scanner scanner;
     private SpriteRenderer spriteRenderer;
     public bool isAlive;
@@ -25,6 +27,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         scanner = GetComponent<Scanner>();
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
     void Start()
     {
@@ -42,6 +47,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
@@ -53,7 +59,13 @@ public class Player : MonoBehaviour
         if (movement != Vector2.zero)
         {
             lastMoveDirection = movement.normalized;
+            animator.SetBool("isRunning", true);
         }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
 
         // if a user gets hit, they are invulnerable for a short time
         // this is to prevent the user from getting hit multiple times in a row
@@ -63,7 +75,9 @@ public class Player : MonoBehaviour
         } else if (invulverable > 0) {
             invulverable -= Time.deltaTime;
             spriteRenderer.color = Color.gray;
-        } else if (invulverable <= 0) {
+        }
+        else if (invulverable <= 0)
+        {
             invulverable = 0;
             spriteRenderer.color = Color.white;
         }
@@ -92,7 +106,10 @@ public class Player : MonoBehaviour
                 // game over
                 currHealth = 0;
                 isAlive = false;
-
+                // pause background music and play die animation
+                audioSource.Pause();
+                animator.SetTrigger("Die");
+                StartCoroutine(GameOverAfterAnimation());
                 // freeze the player
                 speed = 0;
                 //note: this still doesn't stop the items from damaging enemies
@@ -134,5 +151,16 @@ public class Player : MonoBehaviour
         speed = 3.25f;
         maxHealth = 3; // from what we have decided?
         currHealth = maxHealth;
+    }
+
+        private IEnumerator GameOverAfterAnimation()
+    {
+        // Waiting until animation is finished
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        // Game over
+        Time.timeScale = 0f;
+
+>>>>>>> Stashed changes
     }
 }
