@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting.InputSystem;
 
 
 public class Player : MonoBehaviour
@@ -85,6 +86,13 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.linearVelocity = movement * speed;
+    }
+    private void LateUpdate()
+    {
+        if (movement.x != 0)
+        {
+            spriteRenderer.flipX = movement.x < 0;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
