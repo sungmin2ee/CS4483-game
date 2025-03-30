@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d45bdb9c06aad1408485975a4250988, type: 3}
   m_Name: Item 2
   m_EditorClassIdentifier: 
-  itemType: 0
-  itemId: 0
-  itemName: shovel
-  itemDesc: 'Increase attackspeed {0}% '
-  itemIcon: {fileID: -181907988, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  itemType: 3
+  itemId: 2
+  itemName: boots
+  itemDesc: 'Increase speed {0}% '
+  itemIcon: {fileID: -966295699, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   baseDamage: 4.5
   baseCount: 3
   damages:
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
   - 0.5
-  - 1
-  - 1.5
-  - 2
-  - 2.5
-  counts: 0100000001000000010000000100000001000000
+  counts: 0000000000000000000000000000000000000000
   projectile: {fileID: 7426028972908210851, guid: 4fc2853ff53a35746a3f4a44aa6155a8,
     type: 3}

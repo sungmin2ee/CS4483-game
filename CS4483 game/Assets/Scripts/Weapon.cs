@@ -65,6 +65,7 @@ public class Weapon : MonoBehaviour
                 speed = 0.8f;
                 break;
             case 2:
+                //player.speed += 0.1f;
                 break;
             default:
                 speed = 0.4f;

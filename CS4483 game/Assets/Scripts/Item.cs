@@ -11,6 +11,7 @@ public class Item : MonoBehaviour
     Text textLevel;
     Text textName;
     Text textDesc;
+    public Gear gear;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class Item : MonoBehaviour
                 textDesc.text = string.Format(data.itemDesc, data.damages[level]*100);
                 break;
             case ItemData.ItemType.Shoe:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100);
                 break;
             default:
                 textDesc.text = string.Format(data.itemDesc);
@@ -72,6 +74,17 @@ public class Item : MonoBehaviour
             case ItemData.ItemType.Heal:
                 break;
             case ItemData.ItemType.Shoe:
+                if(level == 0)
+                {
+                    GameObject newGear = new GameObject();
+                    gear = newGear.AddComponent<Gear>();
+                    gear.Init(data);
+                }
+                else
+                {
+                    float nextRate = data.damages[level];
+                    gear.levelUp(nextRate);
+                }
                 break;
         }
         Debug.Log("Item Clicked");
