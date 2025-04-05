@@ -236,6 +236,12 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &54454309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 87415376892686314, guid: 1cc91a068e0a77c4499631f08a8f1d14,
+    type: 3}
+  m_PrefabInstance: {fileID: 259390683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &81282192
 GameObject:
   m_ObjectHideFlags: 0
@@ -7249,12 +7255,17 @@ PrefabInstance:
     - target: {fileID: 87415376892686314, guid: 1cc91a068e0a77c4499631f08a8f1d14,
         type: 3}
       propertyPath: m_Name
-      value: Stage 1
+      value: Stage_1
       objectReference: {fileID: 0}
     - target: {fileID: 87415376892686314, guid: 1cc91a068e0a77c4499631f08a8f1d14,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 87415376892686314, guid: 1cc91a068e0a77c4499631f08a8f1d14,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6392742848178109933, guid: 1cc91a068e0a77c4499631f08a8f1d14,
         type: 3}
@@ -7591,7 +7602,7 @@ PrefabInstance:
     - target: {fileID: 87415376892686314, guid: 1cc91a068e0a77c4499631f08a8f1d14,
         type: 3}
       propertyPath: m_Name
-      value: Stage 3
+      value: Stage_3
       objectReference: {fileID: 0}
     - target: {fileID: 87415376892686314, guid: 1cc91a068e0a77c4499631f08a8f1d14,
         type: 3}
@@ -16487,6 +16498,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1292701270}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &722616680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2476188797626011062, guid: bffa0ac98e62ac54c86510bba91edd1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1348958540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &814183221
 GameObject:
   m_ObjectHideFlags: 0
@@ -16884,6 +16901,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101398936}
   m_CullTransparentMesh: 1
+--- !u!1 &1150066469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 87415376892686314, guid: 1cc91a068e0a77c4499631f08a8f1d14,
+    type: 3}
+  m_PrefabInstance: {fileID: 405519606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1158250731
 GameObject:
   m_ObjectHideFlags: 0
@@ -17761,7 +17784,7 @@ PrefabInstance:
     - target: {fileID: 2476188797626011062, guid: bffa0ac98e62ac54c86510bba91edd1a,
         type: 3}
       propertyPath: m_Name
-      value: Stage 2
+      value: Stage_2
       objectReference: {fileID: 0}
     - target: {fileID: 2476188797626011062, guid: bffa0ac98e62ac54c86510bba91edd1a,
         type: 3}
@@ -20154,6 +20177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942988665}
   - component: {fileID: 1942988664}
+  - component: {fileID: 1942988666}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -20191,6 +20215,21 @@ Transform:
   - {fileID: 1862761749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942988666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942988663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ea4c837a78ac943bc09ff04c52ac9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage_1: {fileID: 54454309}
+  stage_2: {fileID: 722616680}
+  stage_3: {fileID: 1150066469}
 --- !u!1 &1959118021
 GameObject:
   m_ObjectHideFlags: 0

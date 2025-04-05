@@ -4,13 +4,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public static MapChanger Map;
     [Header("# Player Input")]
     public Player player;
     public PoolManager pool;
     public LevelUp uiLevelUp;
     [Header("# Game Control")]
     public float gameTime = 0;
-    public const float resetTime = 30; // change value later
+    public const float resetTime = 30; // how many seconds in a round
     public float timeRemaining = resetTime; // change value later
     public float timeBetweenRounds; // hidden timer that gives the player a break after surviving a round
     public int round = 1;
@@ -30,6 +31,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Map == null)
+        {
+            Map = FindFirstObjectByType<MapChanger>();
+        }
 
         if (Instance == null)
         {
@@ -40,7 +45,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     void Update()
@@ -101,8 +105,9 @@ public class GameManager : MonoBehaviour
                     round++;
                     timeRemaining = resetTime;
                     isRoundActive = true;
-                    SceneManager.LoadScene("Environment"); // would be changed when we get more levels/maps/scenes to play in
+                    //SceneManager.LoadScene("Environment"); // would be changed when we get more levels/maps/scenes to play in
                     //SceneManager.LoadScene(roundScenes[(round - 1)]); // round - 1 because arrays are 0-indexed
+                    Map.LoadRoundMap(); // change the map
                 }
 
                 // else the player is in a level up screen
