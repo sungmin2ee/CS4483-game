@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
     private Animator animator;
-    private AudioSource audioSource;
+    private AudioSource musicSource; 
+    private AudioSource effectsSource; 
     public Scanner scanner;
     private SpriteRenderer spriteRenderer;
     public bool isAlive;
@@ -23,14 +24,20 @@ public class Player : MonoBehaviour
     private float attackCooldown = 0.5f;
     private float lastAttackTime = 0f; 
     private Vector2 lastMoveDirection = Vector2.right;
+    public GameObject attackEffectPrefab;
+    public AudioClip attackSound;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         scanner = GetComponent<Scanner>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.Play();
+        musicSource = GetComponent<AudioSource>();
+        musicSource.Play();
+        effectsSource = gameObject.AddComponent<AudioSource>();
+        effectsSource.playOnAwake = false;
+        effectsSource.volume = 0.4f;
     }
     void Start()
     {
@@ -113,7 +120,7 @@ public class Player : MonoBehaviour
                 currHealth = 0;
                 isAlive = false;
                 // pause background music and play die animation
-                audioSource.Pause();
+                musicSource.Pause();
                 animator.SetTrigger("Die");
                 //gameover animation
 
@@ -136,9 +143,27 @@ public class Player : MonoBehaviour
             return;
         }
 
-        lastAttackTime = Time.time; 
+        lastAttackTime = Time.time;
 
-        Vector2 attackPosition = (Vector2)transform.position + lastMoveDirection * attackRange;
+        if (attackSound != null)
+        {
+            effectsSource.PlayOneShot(attackSound);
+        }
+
+        Vector2 attackPosition = (Vector2)transform.position + lastMoveDirection.normalized;
+        float angle = Mathf.Atan2(lastMoveDirection.y, lastMoveDirection.x) * Mathf.Rad2Deg;
+
+        float rotationOffset = -130f; 
+
+        if (attackEffectPrefab != null)
+        {
+            GameObject effect = Instantiate(
+                attackEffectPrefab,
+                attackPosition,
+                Quaternion.Euler(0, 0, angle + rotationOffset)
+            );
+            Destroy(effect, 0.2f);
+        }
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPosition, attackRange);
         foreach (Collider2D enemy in hitEnemies)

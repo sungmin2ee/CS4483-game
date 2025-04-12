@@ -17816,6 +17816,9 @@ MonoBehaviour:
   invulverable: 0
   attackRange: 1.5
   attackDamage: 3
+  attackEffectPrefab: {fileID: 9082023486894770357, guid: 0bbd3924b5921244197bc329d05ee8b8,
+    type: 3}
+  attackSound: {fileID: 8300000, guid: bb764ad364cf05e4ca703e6f01a65e83, type: 3}
 --- !u!212 &1353856692
 SpriteRenderer:
   m_ObjectHideFlags: 0
