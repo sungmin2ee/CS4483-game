@@ -38,6 +38,7 @@ public class Spawner : MonoBehaviour
         timer += Time.deltaTime;
         level = Mathf.Clamp(Mathf.FloorToInt(GameManager.Instance.gameTime / 10f), 0, spawnData.Length - 1);
         // Debug.Log("Boss Spawned: " + GameManager.Instance.pool.bossSpawned);    
+        float dynamicSpawnTime = Mathf.Max(0.2f, spawnData[level].spawnTime - level * 0.04f);
 
         // logic of generating boss: boss will be generate at round 3
         if (!GameManager.Instance.pool.bossSpawned && timer > spawnData[level].spawnTime && GameManager.Instance.round == 3) 
@@ -45,18 +46,18 @@ public class Spawner : MonoBehaviour
             
             GameManager.Instance.pool.bossSpawned = true; 
             SpawnBoss();
-        }   
+        }
 
         // generate normal enemies
-        if (timer > spawnData[level].spawnTime && GameManager.Instance.timeRemaining > 0)
+        if (timer > dynamicSpawnTime && GameManager.Instance.timeRemaining > 0)
         {
             timer = 0;
             Spawn();
         }
-        
 
 
-        
+
+
         if (GameManager.Instance.timeRemaining <= 0)
         {
             ClearSpawnedEnemies();
@@ -67,21 +68,26 @@ public class Spawner : MonoBehaviour
     {
         if (spawnPoint.Length <= 1 || spawnBound == null) return;
 
-        int randomIndex = Random.Range(1, spawnPoint.Length);
-        Vector2 spawnPos = spawnPoint[randomIndex].position;
+        int enemyCount = Mathf.Clamp(level + 1, 1, 10); 
 
-        // check if spawn point is in the bounds
-        if (!spawnBound.OverlapPoint(spawnPos))
+        for (int i = 0; i < enemyCount; i++)
         {
-            // Debug.Log("Spawner tried to spawn outside CameraConfiner, adjusting...");
-            spawnPos = spawnBound.ClosestPoint(spawnPos); // restrict it toclosest spawning point
-        }
+            int randomIndex = Random.Range(1, spawnPoint.Length);
+            Vector2 spawnPos = spawnPoint[randomIndex].position;
 
-        GameObject enemy = GameManager.Instance.pool.Get(0);
-        enemy.transform.position = spawnPos;
-        enemy.GetComponent<Enemy>().Init(spawnData[level]);
-        spawnedEnemies.Add(enemy);
+            if (!spawnBound.OverlapPoint(spawnPos))
+            {
+                spawnPos = spawnBound.ClosestPoint(spawnPos);
+            }
+
+            GameObject enemy = GameManager.Instance.pool.Get(0); 
+            enemy.transform.position = spawnPos;
+            enemy.GetComponent<Enemy>().Init(spawnData[level]);
+            spawnedEnemies.Add(enemy);
+        }
     }
+
+
 
     private void SpawnBoss()
     {
