@@ -105,13 +105,13 @@ public class Spawner : MonoBehaviour
 
         GameObject boss = GameManager.Instance.pool.Get(3);
         boss.transform.position = spawnPos;
-        boss.GetComponent<EnemyBoss>().Init(new SpawnData
+       /* boss.GetComponent<EnemyBoss>().Init(new SpawnData
         {
             spawnTime = 0, 
             spriteType = 2, 
             health = 100, 
             speed = 2f
-        });
+        });*/
         spawnedEnemies.Add(boss);
     }
 

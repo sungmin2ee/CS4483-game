@@ -17834,11 +17834,11 @@ MonoBehaviour:
   speed: 2
   scanner: {fileID: 0}
   isAlive: 1
-  maxHealth: 3
-  currHealth: 3
+  maxHealth: 5
+  currHealth: 5
   invulverable: 0
   attackRange: 1.5
-  attackDamage: 3
+  attackDamage: 4
   attackEffectPrefab: {fileID: 9082023486894770357, guid: 0bbd3924b5921244197bc329d05ee8b8,
     type: 3}
   attackSound: {fileID: 8300000, guid: bb764ad364cf05e4ca703e6f01a65e83, type: 3}
@@ -19776,7 +19776,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 03000000050000000a0000006400000096000000d20000001801000068010000c201000058020000
+  nextExp: 03000000080000000c000000140000001e00000028000000320000003c0000004600000050000000
 --- !u!1 &1851670158
 GameObject:
   m_ObjectHideFlags: 0

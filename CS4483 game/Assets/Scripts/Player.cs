@@ -16,8 +16,8 @@ public class Player : MonoBehaviour
     public Scanner scanner;
     private SpriteRenderer spriteRenderer;
     public bool isAlive;
-    public int maxHealth = 3;
-    public int currHealth = 3;
+    public int maxHealth = 7;
+    public int currHealth = 7;
     public float invulverable = 0;
     public float attackRange = 2;
     public int attackDamage = 3;
@@ -182,7 +182,7 @@ public class Player : MonoBehaviour
     {
         isAlive = true;
         speed = 3.25f;
-        maxHealth = 3; // from what we have decided?
+        maxHealth = 7; // from what we have decided?
         currHealth = maxHealth;
     }
 
